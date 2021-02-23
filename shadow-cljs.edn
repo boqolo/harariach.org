@@ -1,0 +1,22 @@
+;; shadow-cljs configuration
+{:source-paths ;; config JVM classpath + used to find cljs files
+ ["src/clj" "src/cljs"]
+
+ :dependencies
+ [[http-kit "2.3.0"]
+  ; [compojure "1.6.2"]
+  [ring/ring-defaults "0.3.2"]
+  [lilactown/helix "0.0.14"]]
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/assets/js"
+        :asset-path "assets/js"
+        :modules {:app {:entries [harariach.core]}}
+        :dev {:compiler-options {:output-feature-set :es6}}
+        :devtools   {:after-load harariach.core/mount-root}
+        :release {:compiler-options {:optimizations :simple}}}}
+
+ :dev-http {3000 {:root "public"}}
+
+}
