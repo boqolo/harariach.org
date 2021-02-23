@@ -17,6 +17,6 @@
         :devtools   {:after-load harariach.core/mount-root}
         :release {:compiler-options {:optimizations :simple}}}}
 
- :dev-http {3000 {:root "public"}}
+ :dev-http {4444 {:root "public"}}
 
 }

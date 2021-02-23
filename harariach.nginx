@@ -7,7 +7,7 @@ server {
   server_name harariach.org www.harariach.org;
 
   location / {
-    proxy_pass http://localhost:3000;
+    proxy_pass http://localhost:4444;
   }
 
 }
